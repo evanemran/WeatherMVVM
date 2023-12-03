@@ -1,4 +1,4 @@
-package com.example.weathermvvm
+package com.evanemran.weathermvvm
 
 import org.junit.Test
 
