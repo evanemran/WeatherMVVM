@@ -16,6 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.evanemran.weathermvvm.domain.weather.WeatherData
+import com.evanemran.weathermvvm.presentation.ui.theme.DeepBlue
 import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -23,13 +24,14 @@ import java.time.format.DateTimeFormatter
 fun HourlyWeatherDisplay(
     weatherData: WeatherData,
     modifier: Modifier = Modifier,
-    textColor: Color = Color.White
+    textColor: Color = DeepBlue
 ) {
-    val formattedTime = remember(weatherData) {
+    var formattedTime = remember(weatherData) {
         weatherData.time.format(
-            DateTimeFormatter.ofPattern("HH:mm")
+            DateTimeFormatter.ofPattern("HH a")
         )
     }
+    formattedTime = formattedTime.replace("am", "AM").replace("pm", "PM");
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -37,7 +39,7 @@ fun HourlyWeatherDisplay(
     ) {
         Text(
             text = formattedTime,
-            color = Color.LightGray
+            color = Color.DarkGray
         )
         Image(painter = painterResource(id = weatherData.weatherType.iconRes), contentDescription = null, modifier = Modifier.width(40.dp))
         Text(

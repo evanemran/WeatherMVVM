@@ -27,6 +27,7 @@ import com.evanemran.weathermvvm.presentation.WeatherForecast
 import com.evanemran.weathermvvm.presentation.WeatherViewModel
 import com.evanemran.weathermvvm.presentation.ui.theme.DarkBlue
 import com.evanemran.weathermvvm.presentation.ui.theme.DeepBlue
+import com.evanemran.weathermvvm.presentation.ui.theme.SkyBlue
 import com.evanemran.weathermvvm.presentation.ui.theme.WeatherMVVMTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -55,7 +56,7 @@ class MainActivity : ComponentActivity() {
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(DeepBlue)
+                            .background(Color.White)
                     ) {
                         WeatherCard(state = viewModel.state, backgroundColor = Color.LightGray)
                         Spacer(modifier = Modifier.height(16.dp))

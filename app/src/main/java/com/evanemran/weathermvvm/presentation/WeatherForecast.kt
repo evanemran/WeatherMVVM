@@ -27,7 +27,7 @@ fun WeatherForecast(
             Text(
                 text = "Today",
                 fontSize = 20.sp,
-                color = Color.White
+                color = Color.Black
             )
             Spacer(modifier = Modifier.height(16.dp))
             LazyRow(content = {
