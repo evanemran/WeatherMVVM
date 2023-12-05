@@ -26,6 +26,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.evanemran.weathermvvm.R
+import com.evanemran.weathermvvm.presentation.ui.theme.DarkBlue
+import com.evanemran.weathermvvm.presentation.ui.theme.DeepBlue
 import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
 
@@ -40,12 +42,13 @@ fun WeatherCard(
         Card(
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier
-                .padding(16.dp)
                 .background(backgroundColor)
+                .padding(16.dp)
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .background(DarkBlue)
                     .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
